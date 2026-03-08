@@ -5,15 +5,19 @@ document.addEventListener('DOMContentLoaded', function() {
     btn.textContent = 'Click me';
     btn.onclick = function() { alert('Hello from freelancer app!'); };
     app.appendChild(btn);
+
+    const toggleBtn = document.createElement('button');
+    toggleBtn.textContent = 'Toggle Dark Mode';
+    toggleBtn.style.marginLeft = '10px';
+    toggleBtn.onclick = toggleDarkMode;
+    app.appendChild(toggleBtn);
+
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+    }
 });
 
-// Dark mode toggle
 function toggleDarkMode() {
     document.body.classList.toggle('dark-mode');
     localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-}
-
-// Restore preference
-if (localStorage.getItem('darkMode') === 'true') {
-    document.body.classList.add('dark-mode');
 }
