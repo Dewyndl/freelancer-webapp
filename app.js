@@ -6,3 +6,14 @@ document.addEventListener('DOMContentLoaded', function() {
     btn.onclick = function() { alert('Hello from freelancer app!'); };
     app.appendChild(btn);
 });
+
+// Dark mode toggle
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+}
+
+// Restore preference
+if (localStorage.getItem('darkMode') === 'true') {
+    document.body.classList.add('dark-mode');
+}
