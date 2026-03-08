@@ -13,3 +13,12 @@ body {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 h1 { color: #333; }
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+    body { background: #1a1a2e; color: #e0e0e0; }
+    #app { background: #16213e; box-shadow: 0 2px 4px rgba(0,0,0,0.5); }
+    h1 { color: #e94560; }
+    button { background: #e94560; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 4px; }
+    button:hover { background: #c73e54; }
+}
